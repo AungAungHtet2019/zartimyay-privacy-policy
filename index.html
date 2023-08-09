@@ -1,167 +1,66 @@
-class AutoGenerate {
-  AutoGenerate({
-    required this.id,
-    required this.title,
-    required this.description,
-    required this.remark,
-    required this.createdAt,
-    required this.updatedAt,
-    required this.chatGroupUserId,
-    required this.users,
-    required this.messages,
-  });
-  late final int id;
-  late final String title;
-  late final String description;
-  late final String remark;
-  late final String createdAt;
-  late final String updatedAt;
-  late final int chatGroupUserId;
-  late final List<Users> users;
-  late final List<Messages> messages;
-  
-  AutoGenerate.fromJson(Map<String, dynamic> json){
-    id = json['id'];
-    title = json['title'];
-    description = json['description'];
-    remark = json['remark'];
-    createdAt = json['created_at'];
-    updatedAt = json['updated_at'];
-    chatGroupUserId = json['chat_group_user_id'];
-    users = List.from(json['users']).map((e)=>Users.fromJson(e)).toList();
-    messages = List.from(json['messages']).map((e)=>Messages.fromJson(e)).toList();
-  }
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Zartimyay Privacy Policy</title>
+   </head>
+   <body>
+      <h1>Zartimyay Privacy Policy</h1>
+      <p>Zartimyay Cultivation App Privacy Policy
 
-  Map<String, dynamic> toJson() {
-    final _data = <String, dynamic>{};
-    _data['id'] = id;
-    _data['title'] = title;
-    _data['description'] = description;
-    _data['remark'] = remark;
-    _data['created_at'] = createdAt;
-    _data['updated_at'] = updatedAt;
-    _data['chat_group_user_id'] = chatGroupUserId;
-    _data['users'] = users.map((e)=>e.toJson()).toList();
-    _data['messages'] = messages.map((e)=>e.toJson()).toList();
-    return _data;
-  }
-}
+This privacy policy applies to the Zartimyay Cultivation App, developed by [Your Name].
 
-class Users {
-  Users({
-    required this.id,
-    required this.name,
-    required this.email,
-    required this.contactInfo,
-    required this.address,
-    required this.remark,
-    required this.updatedAt,
-  });
-  late final int id;
-  late final String name;
-  late final String email;
-  late final String contactInfo;
-  late final String address;
-  late final String remark;
-  late final String updatedAt;
-  
-  Users.fromJson(Map<String, dynamic> json){
-    id = json['id'];
-    name = json['name'];
-    email = json['email'];
-    contactInfo = json['contact_info'];
-    address = json['address'];
-    remark = json['remark'];
-    updatedAt = json['updated_at'];
-  }
+1. Information We Collect
 
-  Map<String, dynamic> toJson() {
-    final _data = <String, dynamic>{};
-    _data['id'] = id;
-    _data['name'] = name;
-    _data['email'] = email;
-    _data['contact_info'] = contactInfo;
-    _data['address'] = address;
-    _data['remark'] = remark;
-    _data['updated_at'] = updatedAt;
-    return _data;
-  }
-}
+We collect the following information from you when you use the Zartimyay Cultivation App:
 
-class Messages {
-  Messages({
-    required this.id,
-    required this.me,
-    required this.content,
-    required this.createdAt,
-    required this.updatedAt,
-    required this.media,
-  });
-  late final int id;
-  late final bool me;
-  late final String content;
-  late final String createdAt;
-  late final String updatedAt;
-  late final List<Media> media;
-  
-  Messages.fromJson(Map<String, dynamic> json){
-    id = json['id'];
-    me = json['me'];
-    content = json['content'];
-    createdAt = json['created_at'];
-    updatedAt = json['updated_at'];
-    media = List.from(json['media']).map((e)=>Media.fromJson(e)).toList();
-  }
+Your name and email address
+Your device's unique identifier
+Your location data
+Your usage data, such as the pages you visit and the features you use
+We may also collect information from you if you contact us for support or provide us with feedback.
 
-  Map<String, dynamic> toJson() {
-    final _data = <String, dynamic>{};
-    _data['id'] = id;
-    _data['me'] = me;
-    _data['content'] = content;
-    _data['created_at'] = createdAt;
-    _data['updated_at'] = updatedAt;
-    _data['media'] = media.map((e)=>e.toJson()).toList();
-    return _data;
-  }
-}
+2. How We Use Your Information
 
-class Media {
-  Media({
-    required this.id,
-    required this.fileName,
-    required this.fileUrl,
-    required this.fileType,
-    required this.fileSize,
-    required this.createdAt,
-    required this.updatedAt,
-  });
-  late final int id;
-  late final String fileName;
-  late final String fileUrl;
-  late final String fileType;
-  late final int fileSize;
-  late final String createdAt;
-  late final String updatedAt;
-  
-  Media.fromJson(Map<String, dynamic> json){
-    id = json['id'];
-    fileName = json['file_name'];
-    fileUrl = json['file_url'];
-    fileType = json['file_type'];
-    fileSize = json['file_size'];
-    createdAt = json['created_at'];
-    updatedAt = json['updated_at'];
-  }
+We use your information to:
 
-  Map<String, dynamic> toJson() {
-    final _data = <String, dynamic>{};
-    _data['id'] = id;
-    _data['file_name'] = fileName;
-    _data['file_url'] = fileUrl;
-    _data['file_type'] = fileType;
-    _data['file_size'] = fileSize;
-    _data['created_at'] = createdAt;
-    _data['updated_at'] = updatedAt;
-    return _data;
-  }
-}
+Provide you with the Zartimyay Cultivation App
+Improve the Zartimyay Cultivation App
+Send you marketing messages about our products and services
+Respond to your support requests
+Protect our legal rights
+3. Sharing Your Information
+
+We may share your information with:
+
+Our third-party service providers, who help us operate the Zartimyay Cultivation App
+Our affiliates, who may offer products or services that are complementary to ours
+Law enforcement agencies, if required by law
+4. Your Choices
+
+You can choose to:
+
+Opt out of receiving marketing messages from us
+Delete your account
+Request that we delete your information
+To make these choices, please contact us at [email protected]
+
+5. Data Security
+
+We take steps to protect your information, including:
+
+Using industry-standard security measures to protect your information
+Requiring our third-party service providers to protect your information
+Encrypting your information when it is transmitted over the internet
+6. Children
+
+The Zartimyay Cultivation App is not intended for children under the age of 13. If you are under the age of 13, please do not use the app.
+
+7. Changes to This Privacy Policy
+
+We may update this privacy policy from time to time. The most recent version will always be posted on our website.
+
+8. Contact Us
+
+If you have any questions about this privacy policy, please contact us at [email protected]</p>
+   </body>
+</html>
