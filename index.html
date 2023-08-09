@@ -1,0 +1,167 @@
+class AutoGenerate {
+  AutoGenerate({
+    required this.id,
+    required this.title,
+    required this.description,
+    required this.remark,
+    required this.createdAt,
+    required this.updatedAt,
+    required this.chatGroupUserId,
+    required this.users,
+    required this.messages,
+  });
+  late final int id;
+  late final String title;
+  late final String description;
+  late final String remark;
+  late final String createdAt;
+  late final String updatedAt;
+  late final int chatGroupUserId;
+  late final List<Users> users;
+  late final List<Messages> messages;
+  
+  AutoGenerate.fromJson(Map<String, dynamic> json){
+    id = json['id'];
+    title = json['title'];
+    description = json['description'];
+    remark = json['remark'];
+    createdAt = json['created_at'];
+    updatedAt = json['updated_at'];
+    chatGroupUserId = json['chat_group_user_id'];
+    users = List.from(json['users']).map((e)=>Users.fromJson(e)).toList();
+    messages = List.from(json['messages']).map((e)=>Messages.fromJson(e)).toList();
+  }
+
+  Map<String, dynamic> toJson() {
+    final _data = <String, dynamic>{};
+    _data['id'] = id;
+    _data['title'] = title;
+    _data['description'] = description;
+    _data['remark'] = remark;
+    _data['created_at'] = createdAt;
+    _data['updated_at'] = updatedAt;
+    _data['chat_group_user_id'] = chatGroupUserId;
+    _data['users'] = users.map((e)=>e.toJson()).toList();
+    _data['messages'] = messages.map((e)=>e.toJson()).toList();
+    return _data;
+  }
+}
+
+class Users {
+  Users({
+    required this.id,
+    required this.name,
+    required this.email,
+    required this.contactInfo,
+    required this.address,
+    required this.remark,
+    required this.updatedAt,
+  });
+  late final int id;
+  late final String name;
+  late final String email;
+  late final String contactInfo;
+  late final String address;
+  late final String remark;
+  late final String updatedAt;
+  
+  Users.fromJson(Map<String, dynamic> json){
+    id = json['id'];
+    name = json['name'];
+    email = json['email'];
+    contactInfo = json['contact_info'];
+    address = json['address'];
+    remark = json['remark'];
+    updatedAt = json['updated_at'];
+  }
+
+  Map<String, dynamic> toJson() {
+    final _data = <String, dynamic>{};
+    _data['id'] = id;
+    _data['name'] = name;
+    _data['email'] = email;
+    _data['contact_info'] = contactInfo;
+    _data['address'] = address;
+    _data['remark'] = remark;
+    _data['updated_at'] = updatedAt;
+    return _data;
+  }
+}
+
+class Messages {
+  Messages({
+    required this.id,
+    required this.me,
+    required this.content,
+    required this.createdAt,
+    required this.updatedAt,
+    required this.media,
+  });
+  late final int id;
+  late final bool me;
+  late final String content;
+  late final String createdAt;
+  late final String updatedAt;
+  late final List<Media> media;
+  
+  Messages.fromJson(Map<String, dynamic> json){
+    id = json['id'];
+    me = json['me'];
+    content = json['content'];
+    createdAt = json['created_at'];
+    updatedAt = json['updated_at'];
+    media = List.from(json['media']).map((e)=>Media.fromJson(e)).toList();
+  }
+
+  Map<String, dynamic> toJson() {
+    final _data = <String, dynamic>{};
+    _data['id'] = id;
+    _data['me'] = me;
+    _data['content'] = content;
+    _data['created_at'] = createdAt;
+    _data['updated_at'] = updatedAt;
+    _data['media'] = media.map((e)=>e.toJson()).toList();
+    return _data;
+  }
+}
+
+class Media {
+  Media({
+    required this.id,
+    required this.fileName,
+    required this.fileUrl,
+    required this.fileType,
+    required this.fileSize,
+    required this.createdAt,
+    required this.updatedAt,
+  });
+  late final int id;
+  late final String fileName;
+  late final String fileUrl;
+  late final String fileType;
+  late final int fileSize;
+  late final String createdAt;
+  late final String updatedAt;
+  
+  Media.fromJson(Map<String, dynamic> json){
+    id = json['id'];
+    fileName = json['file_name'];
+    fileUrl = json['file_url'];
+    fileType = json['file_type'];
+    fileSize = json['file_size'];
+    createdAt = json['created_at'];
+    updatedAt = json['updated_at'];
+  }
+
+  Map<String, dynamic> toJson() {
+    final _data = <String, dynamic>{};
+    _data['id'] = id;
+    _data['file_name'] = fileName;
+    _data['file_url'] = fileUrl;
+    _data['file_type'] = fileType;
+    _data['file_size'] = fileSize;
+    _data['created_at'] = createdAt;
+    _data['updated_at'] = updatedAt;
+    return _data;
+  }
+}
